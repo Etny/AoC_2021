@@ -11,7 +11,7 @@ fn main() {
         .collect();
 
     errors.sort();
-    
+
     let output = errors[(errors.len() - 1) / 2];
     println!("{}", output);
 }
@@ -26,12 +26,12 @@ where
                 if res != 0 {
                     return res;
                 }
-            } else {
-                return 0;
+                continue;
             }
         }
+        break;
     }
-
+    
     0
 }
 
