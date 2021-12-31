@@ -13,7 +13,10 @@ fn main() {
     println!("{}", output);
 }
 
-fn parse_packet(bits: &mut Biterator) -> u64 {
+fn parse_packet<T>(bits: &mut T) -> u64 
+where
+    T: Iterator<Item=u8>
+{
     let _version = join_bits(bits.take(3));
     let type_id = join_bits(bits.take(3));
 
@@ -25,18 +28,20 @@ fn parse_packet(bits: &mut Biterator) -> u64 {
 
 }
 
-fn parse_operator_packet(bits: &mut Biterator, id: u64) -> u64 {
+fn parse_operator_packet<T>(bits: &mut T, id: u64) -> u64 
+where
+    T: Iterator<Item=u8>
+{
     let mode = bits.next().unwrap();
     let mut operants = vec![];
 
     if mode == 0 {
         let len_bits = bits.take(15).collect::<Vec<_>>();
         let len = join_bits(len_bits.into_iter()) as usize;
+        let mut iter = bits.take(len).collect::<Vec<_>>().into_iter().peekable();
 
-        let mut subpackets = Biterator::from_iter(bits.take(len));
-
-        while !subpackets.done() {
-            operants.push(parse_packet(&mut subpackets));
+        while iter.peek().is_some() {
+            operants.push(parse_packet(&mut iter))
         }
         
     } else {
@@ -50,7 +55,10 @@ fn parse_operator_packet(bits: &mut Biterator, id: u64) -> u64 {
     perform_op(operants, id)
 }
 
-fn parse_literal_packet(bits: &mut Biterator) -> u64 {
+fn parse_literal_packet<T>(bits: &mut T) -> u64 
+where
+    T: Iterator<Item=u8>
+{
     let mut all_bits = vec![];
 
     loop {

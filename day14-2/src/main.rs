@@ -4,7 +4,7 @@ use std::collections::HashMap;
 use input::*;
 
 
-//Struggled a bit with this one weirldy enough, even though it is basiclly identical to #6, which I found very easy
+//Struggled a bit with this one weirldy enough, even though it is basically identical to #6, which I found very easy
 fn main() {
     let mut rules = HashMap::new();
 
