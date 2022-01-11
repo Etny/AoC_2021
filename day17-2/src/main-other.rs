@@ -4,7 +4,7 @@ use std::collections::{HashMap, HashSet};
 
 use input::*;
 
-//In memory of this horrible, terrible attempted sollution. 
+//In memory of this horrible, terrible attempted solution. 
 fn main() {
     let ranges = INPUT.trim().replace("target area: ", "");
 
