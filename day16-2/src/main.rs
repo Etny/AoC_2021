@@ -36,8 +36,7 @@ where
     let mut operants = vec![];
 
     if mode == 0 {
-        let len_bits = bits.take(15).collect::<Vec<_>>();
-        let len = join_bits(len_bits.into_iter()) as usize;
+        let len = join_bits(bits.take(15)) as usize;
         let mut iter = bits.take(len).collect::<Vec<_>>().into_iter().peekable();
 
         while iter.peek().is_some() {
