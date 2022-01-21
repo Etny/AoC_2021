@@ -55,7 +55,8 @@ pub fn solve_brute(do_min: bool) {
         poss = next;
     }
 
-    println!("{}", results.iter().min().unwrap());
+    let result = if do_min { results.iter().min().unwrap() } else { results.iter().max().unwrap() };
+    println!("{}", result);
 
 }
 
