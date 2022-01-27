@@ -1,5 +1,5 @@
 [package]
-name = "day23-2"
+name = "day23-2-1"
 version = "0.1.0"
 edition = "2021"
 
@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 lazy_static = "*"
 regex = "*"
+rustc-hash = "1.1.0"

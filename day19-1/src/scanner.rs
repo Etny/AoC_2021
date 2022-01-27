@@ -50,7 +50,7 @@ impl Scanner {
 
     pub fn compare(&mut self, other: &Scanner, mut orientations: Vec<Matrix>) -> u32 {
         let mut count = 0;
-        println!("Comparing to scanner {}", other.id);
+        // println!("Comparing to scanner {}", other.id);
 
         let mut new_beacons = vec![];
 
@@ -70,7 +70,7 @@ impl Scanner {
             }
         }
 
-        println!("Matches: {}", count);
+        // println!("Matches: {}", count);
 
         if !new_beacons.is_empty() {
             self.beacons.extend(new_beacons);

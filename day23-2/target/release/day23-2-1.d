@@ -1,0 +1,1 @@
+/home/ynte/Code/rust/AoC/day23-2-1/target/release/day23-2-1: /home/ynte/Code/rust/AoC/day23-2-1/src/input.rs /home/ynte/Code/rust/AoC/day23-2-1/src/input_regex.txt /home/ynte/Code/rust/AoC/day23-2-1/src/main.rs
