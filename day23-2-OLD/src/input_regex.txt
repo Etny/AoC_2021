@@ -1,7 +1,0 @@
-#############
-#...........#
-###([ABCD])#([ABCD])#([ABCD])#([ABCD])###
-  #([ABCD])#([ABCD])#([ABCD])#([ABCD])#
-  #([ABCD])#([ABCD])#([ABCD])#([ABCD])#
-  #([ABCD])#([ABCD])#([ABCD])#([ABCD])#
-  ########
